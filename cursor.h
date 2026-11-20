@@ -1,5 +1,5 @@
 #pragma once
-
+#include <windows.h>
 
 struct Vector2{
     int x;
@@ -8,5 +8,7 @@ struct Vector2{
 
 
 extern Vector2 cursorPos;
+
+COORD getCursorPosition();
 
 void SetCursor();
