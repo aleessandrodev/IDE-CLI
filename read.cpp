@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <vector>
 #include <conio.h>
@@ -29,6 +30,14 @@ void updateinIDE(){
                 //std::cout << "\b \b";
                 if(cursorPos.x > 0) cursorPos.x--;
             }
+        }else if(ch == 9){
+            for(int i = 0; i < 4; i++){
+                //commands[cursorPos.y] += "";
+                commands[cursorPos.y].insert(cursorPos.x+i, 1, ' ');
+                
+            }
+            cursorPos.x += 4;
+            
         }else if(ch == 27){
             status = ideStatus::IDEcommands;
             
@@ -107,7 +116,7 @@ void update_ideCommands(){
         }else if(command == ":b"){
             status = ideStatus::inIDE;
         }else if(command == ":c"){
-            std::cout << "\nnome file output: ";
+            std::cout << "\nnome file output: " << "\033[K";
             
                 
             
@@ -118,7 +127,7 @@ void update_ideCommands(){
             _getch();
         }else if(command == ":cr"){
             
-            std::cout << "\nnome file output: ";
+            std::cout << "\nnome file output: " << "\033[K";
             std::cin >> outputName;
             
             compile(fileName, outputName);
@@ -135,7 +144,7 @@ void update_ideCommands(){
             run(outputName);
             
         }else if(command == ":r"){
-            std::cout << "\nnome file: ";
+            std::cout << "\nnome file: " << "\033[K";
             std::string n;
             std::cin >> n;
             run(n);
@@ -147,14 +156,14 @@ void update_ideCommands(){
             
             
         }else if(command == ":cf"){
-            std::cout << "\nnome file(estensione inclusa): ";
+            std::cout << "\nnome file(estensione inclusa): " << "\033[K";
             std::string n;
             std::cin >> n;
             std::ofstream newfile(n);
             _getch();
             
         }else if(command == ":of"){
-            std::cout << "\nnome file(estensione inclusa): ";
+            std::cout << "\nnome file(estensione inclusa): " << "\033[K";
             std::cin >> fileName;
             std::ifstream file(fileName);
             
@@ -176,23 +185,23 @@ void update_ideCommands(){
             _getch();
             //OPEN FILE
         }else if(command == ":hlp"){
-            std::cout << "\n:q -> QUIT";
-            std::cout << "\n:s -> SAVE";
-            std::cout << "\n:b -> BACK";
+            std::cout << "\n:q -> QUIT" << "\033[K";
+            std::cout << "\n:s -> SAVE" << "\033[K";
+            std::cout << "\n:b -> BACK" << "\033[K";
             std::cout << "\n:c -> COMPILE";
-            std::cout << "\n:r -> RUN";
-            std::cout << "\n:cr -> COMPILE AND RUN";
-            std::cout << "\n:ac -> AUTO COMPILE";
-            std::cout << "\n:acr -> AUTO COMPILE AND RUN";
-            std::cout << "\n:cf -> CREATE FILE";
-            std::cout << "\n:of -> OPEN FILE";
+            std::cout << "\n:r -> RUN" << "\033[K";
+            std::cout << "\n:cr -> COMPILE AND RUN" << "\033[K";
+            std::cout << "\n:ac -> AUTO COMPILE" << "\033[K";
+            std::cout << "\n:acr -> AUTO COMPILE AND RUN" << "\033[K";
+            std::cout << "\n:cf -> CREATE FILE" << "\033[K";
+            std::cout << "\n:of -> OPEN FILE" << "\033[K";
             
             _getch();
             
         }else{
             
             //draw_ideCommands = "Comando non conosciuto. Digita ':hlp' per aiuto.";
-            std::cout << "\nComando non conosciuto.\nDigita ':hlp' per aiuto.";
+            std::cout << "\nComando non conosciuto.\n" << "\033[K" << "Digita ':hlp' per aiuto." << "\033[K";
             _getch();
         }
         command = "";
