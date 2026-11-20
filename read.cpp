@@ -236,6 +236,15 @@ void update_ideCommands(){
             
             _getch();
             
+        }else if(command == ":goc"){
+            
+            status = ideStatus::IDEconsole;
+            
+            system("cls");
+            
+            
+            
+            
         }else if(command == ":hlp"){
             std::cout << "\n:q -> QUIT";
             std::cout << "\n:s -> SAVE";
@@ -257,6 +266,7 @@ void update_ideCommands(){
             std::cout << "\nComando non conosciuto.\n" << "Digita ':hlp' per aiuto.";
             _getch();
         }
+        
         command = "";
         _getch();
         system("cls");
@@ -270,6 +280,7 @@ void update_ideCommands(){
     }else if(ch ==  8){
         if(!command.empty()){
             command.pop_back();
+            std::cout << "\b \b" << std::flush;
             
         }
         

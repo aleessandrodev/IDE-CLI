@@ -9,5 +9,6 @@ extern std::string draw_ideCommands;
 enum ideStatus{
     inIDE,
     IDEcommands,
+    IDEconsole
     
 };

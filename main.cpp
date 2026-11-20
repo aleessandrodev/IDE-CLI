@@ -7,6 +7,8 @@
 #include "write.h"
 #include "cursor.h"
 #include "codeLine.h"
+#include "global.h"
+#include "console.h"
 
 
 ideStatus status = IDEcommands;
@@ -26,6 +28,7 @@ int main()
     //std::cout << "\033[?25l";
     
     HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTitleA("inide");
     while(edit){
         
         
@@ -41,16 +44,25 @@ int main()
         
         switch(status){
             case ideStatus::inIDE:
+            
+                SetConsoleTitleA(("inide - " + fileName).c_str());
+            
                 SetConsoleCursorPosition(h, { (SHORT)(cursorPos.x + gutter), (SHORT)(cursorPos.y + 2) });
                 //writeIDE();
                 updateinIDE();
                 break;
             case ideStatus::IDEcommands:
                 
-                SetConsoleCursorPosition(h, { (SHORT)(cursorPos.x), (SHORT)(cursorPos.y) });
+                SetConsoleTitleA("inide - functions");
+                
+                SetConsoleCursorPosition(h, { 0, 0});
                 
                 drawCommands();
                 update_ideCommands();
+                break;
+            case ideStatus::IDEconsole:
+                SetConsoleTitleA("inide - console");
+                console();
                 break;
             
             
