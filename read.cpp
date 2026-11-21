@@ -125,6 +125,7 @@ void update_ideCommands(){
         if(command == ":s"){
             
             save();
+            system("cls");
             
         }else if(command == ":q"){
             exit(0);
@@ -145,6 +146,7 @@ void update_ideCommands(){
             compile(fileName, outputName);
             
             _getch();
+            system("cls");
         }else if(command == ":cr"){
             
             std::cout << "\nnome file output: ";
@@ -156,6 +158,8 @@ void update_ideCommands(){
             compile(fileName, outputName);
             run(outputName);
             
+            _getch();
+            system("cls");
             
         }else if(command == ":ac"){
             
@@ -164,6 +168,9 @@ void update_ideCommands(){
             save();
             compile(fileName, fileName);
             
+            _getch();
+            system("cls");
+            
         }else if(command == ":acr"){
             
             system("cls");
@@ -171,6 +178,9 @@ void update_ideCommands(){
             save();
             compile(fileName, fileName);
             run(outputName);
+            
+            _getch();
+            system("cls");
             
         }else if(command == ":r"){
             std::cout << "\nnome file: ";
@@ -181,12 +191,17 @@ void update_ideCommands(){
             //std::cout << "\n";
             run(n);
             _getch();
+            system("cls");
+            
             
         }else if(command == ":ar"){
             
             
             system("cls");
             run(outputName);
+            
+            _getch();
+            system("cls");
             
             
         }else if(command == ":cf"){
@@ -195,6 +210,7 @@ void update_ideCommands(){
             std::cin >> n;
             std::ofstream newfile(n);
             _getch();
+            system("cls");
             
         }else if(command == ":of"){
             std::cout << "\nnome file(estensione inclusa): ";
@@ -224,6 +240,7 @@ void update_ideCommands(){
             writeIDE();
             
             _getch();
+            system("cls");
             
         }else if(command == ":sf"){
             std::cout << "\nnome estensione: ";
@@ -235,6 +252,7 @@ void update_ideCommands(){
             system(c.c_str());
             
             _getch();
+            system("cls");
             
         }else if(command == ":goc"){
             
@@ -259,17 +277,19 @@ void update_ideCommands(){
             std::cout << "\n:of -> OPEN FILE";
             
             _getch();
+            system("cls");
             
         }else{
             
             //draw_ideCommands = "Comando non conosciuto. Digita ':hlp' per aiuto.";
             std::cout << "\nComando non conosciuto.\n" << "Digita ':hlp' per aiuto.";
             _getch();
+            system("cls");
         }
         
         command = "";
-        _getch();
-        system("cls");
+        //_getch();
+        
         
         
     }else if(ch == 27){

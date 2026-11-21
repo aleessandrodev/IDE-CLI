@@ -4,9 +4,27 @@
 #include <fstream>
 #include <iostream>
 #include "codeLine.h"
+#include "language.h"
 
 void compile(std::string nameFile, std::string o){
     
+    fileName = nameFile;
+    
+    if(obtainExtansion(nameFile) != "cpp"){
+        
+        std::cout << "ATTENZIONE: il seguente file ha estensione '." + obtainExtansion(nameFile) + "' (" + extensionFile.at(obtainExtansion(nameFile)) + ")\n";
+        std::cout << "Lo vuoi compilare ugualmente? [Y/N] ";
+        
+        while(true){
+            char a;
+            std::cin >> a;
+            
+            if(a == 'n' || a == 'N') return;
+            if(a == 'y' || a == 'Y') break;
+        }
+        
+    }
+        
     if(nameFile == o){
         size_t pos = o.find('.');
         
@@ -25,11 +43,19 @@ void compile(std::string nameFile, std::string o){
 }
 
 void run(std::string o){
-
-    std::string oCommand = o;
-    system(oCommand.c_str());
+    std::string extension = obtainExtansion(o);
+    std::string oCommand = "";
     
+    if(extension == "none"){
+        oCommand = o;
+    }else if(extension == "py"){
+        oCommand = "python " + o;
+    }
+    system(oCommand.c_str());
 }
+
+
+
 void save(){
     
     if(fileName == "none"){
