@@ -5,7 +5,7 @@
 **Un editor di codice e IDE da terminale, ispirato a VIM, per Windows.**
 
 ![Language](https://img.shields.io/badge/language-C%2B%2B-00599C?logo=c%2B%2B&logoColor=white)
-![Version](https://img.shields.io/badge/version-v0.0.4a-blue)
+![Version](https://img.shields.io/badge/version-v0.0.4b-blue)
 ![Platform](https://img.shields.io/badge/platform-Windows-0078D6?logo=windows&logoColor=white)
 ![Status](https://img.shields.io/badge/status-in%20sviluppo-orange)
 ![License](https://img.shields.io/badge/license-MIT-green)
