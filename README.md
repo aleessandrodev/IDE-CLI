@@ -141,11 +141,7 @@ g++ *.cpp -o ide-cli.exe
 
 <!-- TODO: if a specific standard is required, add -std=c++17 (or the correct one) -->
 
-Run:
 
-```bash
-ide-cli.exe
-```
 
 ---
 
