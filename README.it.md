@@ -41,7 +41,7 @@
 
 ---
 
-## ✨ Correzioni nella v0.0.04b
+## ✨ Correzioni nella v0.0.4b
 
   - Corretto un errore di compilazione con `:ac` e `:acr` nei file C++.
   - Corretto un errore durante l'esecuzione di altri tipi di file.
