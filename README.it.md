@@ -19,7 +19,7 @@
 ## 📖 Indice
 
 - [Descrizione](#-descrizione)
-- [Funzionalità](#-funzionalità)
+- [Correzioni](#-correzioni-nella-v0004b)
 - [Le tre pagine](#-le-tre-pagine)
 - [Comandi](#-comandi)
 - [Linguaggi supportati](#-linguaggi-supportati)
@@ -41,15 +41,12 @@
 
 ---
 
-## ✨ Funzionalità
+## ✨ Correzioni nella v0.0.04b
 
-- ✏️ Editor di testo nel terminale, ispirato a VIM
-- ⚙️ **Compilazione** di file C++ direttamente dall'editor (manuale o automatica)
-- ▶️ **Esecuzione** di file in vari linguaggi (py, html, ecc.)
-- 🖨️ **Console integrata**: una console vera, con `mkdir`, `cd`, `del`, ecc.
-- 📂 Creazione, ricerca e apertura di file dall'IDE
-- 🌐 Riconoscimento di più linguaggi in base all'estensione
-
+  - Corretto un errore di compilazione con `:ac` e `:acr` nei file C++.
+  - Corretto un errore durante l'esecuzione di altri tipi di file.
+  - Corretto l'allineamento dei numeri di riga nell'IDE.
+  - Migliorata la struttura del progetto dividendo `compiler.cpp` in `runner.cpp` e `fileIO.cpp`.
 ---
 
 ## 📑 Le tre pagine
@@ -62,7 +59,6 @@ INIDE è organizzato in tre pagine:
 | **Editor** | Modifica del file aperto |
 | **Console** | Console normale: crea cartelle, spostati, crea o elimina file con i comandi di sistema |
 
-<!-- TODO: descrivi come si passa da una pagina all'altra (tasti o comandi) -->
 
 ---
 
@@ -80,11 +76,11 @@ I comandi si digitano dalla pagina **Funzioni**.
 | `:cr`  | Compila ed esegui (solo C++) |
 | `:ac`  | Compilazione automatica (solo C++) |
 | `:acr` | Compilazione automatica ed esecuzione (solo C++) |
-| `:sf`  | Cerca un file |
+| `:sfe` | Cerca un file dall'estensione **(nuovo)** |
+| `:sfn` | Cerca un file dal nome **(nuovo)** |
 | `:cf`  | Crea un file |
 | `:of`  | Apri un file |
 
-<!-- TODO: spiega in una riga cosa significa "automatica" per :ac e :acr -->
 
 > 💡 `:c` e `:cr` funzionano solo per **C++**. `:r` funziona per tutti i linguaggi che si possono aprire con un doppio click (es. `py`, `html`).
 
@@ -96,13 +92,13 @@ Estensioni riconosciute dall'editor:
 
 | Estensione | Linguaggio |
 | ---------- | ---------- |
-| `.cpp`         | C++ |
-| `.py`          | Python |
-| `.java`        | Java |
-| `.js`          | JavaScript |
-| `.html`, `.htm`| HTML |
-| `.css`         | CSS |
-| `.json`        | JSON |
+| `.cpp`          | C++ |
+| `.py`           | Python |
+| `.java`         | Java |
+| `.js`           | JavaScript |
+| `.html`, `.htm` | HTML |
+| `.css`          | CSS |
+| `.json`         | JSON |
 
 ---
 
@@ -118,7 +114,8 @@ INIDE/
 ├── read.h/.cpp       # Lettura dei file
 ├── write.h/.cpp      # Scrittura dei file
 ├── language.h/.cpp   # Riconoscimento dei linguaggi
-└── compiler.h/.cpp   # Compilazione ed esecuzione
+├── runner.h/.cpp     # Compilazione ed esecuzione
+└── fileIO.h/.cpp     # Input/Output dei file (funzione di salvataggio)
 ```
 
 ---
@@ -138,8 +135,6 @@ git clone https://github.com/aleessandrodev/INIDE.git
 cd INIDE
 g++ *.cpp -o INIDE.exe
 ```
-
-<!-- TODO: se serve uno standard specifico, aggiungi -std=c++17 (o quello corretto) -->
 
 
 ---
