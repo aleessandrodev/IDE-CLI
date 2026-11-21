@@ -59,7 +59,6 @@ INIDE is organized into three pages:
 | **Editor** | Edit the currently open file |
 | **Console** | A regular console: create folders, navigate, create or delete files with system commands |
 
-<!-- TODO: explain how to switch between pages (keys or commands) -->
 
 ---
 
@@ -82,7 +81,6 @@ Commands are typed from the **Functions** page.
 | `:cf`  | Create a file |
 | `:of`  | Open a file |
 
-<!-- TODO: add one line explaining what "auto" means for :ac and :acr -->
 
 > 💡 `:c` and `:cr` only work for **C++**. `:r` works for every language that can be opened with a double click (e.g. `py`, `html`).
 
@@ -138,7 +136,6 @@ cd INIDE
 g++ *.cpp -o INIDE.exe
 ```
 
-<!-- TODO: if a specific standard is required, add -std=c++17 (or the correct one) -->
 
 
 
