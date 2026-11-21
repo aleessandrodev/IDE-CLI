@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🖥️ IDE-CLI
+# 🖥️ INIDE
 
 **Un editor di codice e IDE da terminale, ispirato a VIM, per Windows.**
 
