@@ -41,7 +41,7 @@
 
 ---
 
-## ✨ Fixies in v0.0.04b
+## ✨ Fixies in v0.0.4b
 
   - Fixed a compile error with `:ac` and `:acr` in C++ files.
   - Fixed an error when running other file types.
