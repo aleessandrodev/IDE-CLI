@@ -37,7 +37,7 @@
 
 **INIDE** is a command-line IDE written in **C++**. It runs entirely in the terminal and has a **VIM**-inspired editor, so you can write, compile and run code without ever leaving the program.
 
-> ⚠️ The project is under active development (`v0.0.4a`): some features may change.
+> ⚠️ The project is under active development (`v0.0.4b`): some features may change.
 
 ---
 
