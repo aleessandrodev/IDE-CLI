@@ -35,7 +35,7 @@
 
 ## 📝 Description
 
-**IDE-CLI** is a command-line IDE written in **C++**. It runs entirely in the terminal and has a **VIM**-inspired editor, so you can write, compile and run code without ever leaving the program.
+**INIDE** is a command-line IDE written in **C++**. It runs entirely in the terminal and has a **VIM**-inspired editor, so you can write, compile and run code without ever leaving the program.
 
 > ⚠️ The project is under active development (`v0.0.4a`): some features may change.
 
@@ -54,7 +54,7 @@
 
 ## 📑 The three pages
 
-IDE-CLI is organized into three pages:
+INIDE is organized into three pages:
 
 | Page | Description |
 | ---- | ----------- |
@@ -109,7 +109,7 @@ File extensions recognized by the editor:
 ## 🗂️ Project structure
 
 ```
-IDE-CLI/
+INIDE/
 ├── main.cpp          # Entry point
 ├── global.h/.cpp     # Global variables and settings
 ├── codeLine.h/.cpp   # Code line handling
@@ -134,9 +134,9 @@ IDE-CLI/
 ## 🚀 Build
 
 ```bash
-git clone https://github.com/aleessandrodev/IDE-CLI.git
-cd IDE-CLI
-g++ *.cpp -o ide-cli.exe
+git clone https://github.com/aleessandrodev/INIDE.git
+cd INIDE
+g++ *.cpp -o INIDE.exe
 ```
 
 <!-- TODO: if a specific standard is required, add -std=c++17 (or the correct one) -->
@@ -164,7 +164,7 @@ g++ *.cpp -o ide-cli.exe
 4. Push the branch (`git push origin feature/feature-name`)
 5. Open a **Pull Request**
 
-For bugs or suggestions, open an [issue](https://github.com/aleessandrodev/IDE-CLI/issues).
+For bugs or suggestions, open an [issue](https://github.com/aleessandrodev/INIDE/issues).
 
 ---
 
