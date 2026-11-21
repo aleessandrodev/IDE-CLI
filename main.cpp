@@ -28,7 +28,7 @@ int main()
     //std::cout << "\033[?25l";
     
     HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
-    SetConsoleTitleA("inide");
+    SetConsoleTitleA("INIDE");
     while(edit){
         
         
@@ -45,7 +45,7 @@ int main()
         switch(status){
             case ideStatus::inIDE:
             
-                SetConsoleTitleA(("inide - " + fileName).c_str());
+                SetConsoleTitleA(("INIDE - " + fileName).c_str());
             
                 SetConsoleCursorPosition(h, { (SHORT)(cursorPos.x + gutter), (SHORT)(cursorPos.y + 2) });
                 //writeIDE();
@@ -53,7 +53,7 @@ int main()
                 break;
             case ideStatus::IDEcommands:
                 
-                SetConsoleTitleA("inide - functions");
+                SetConsoleTitleA("INIDE - functions");
                 
                 SetConsoleCursorPosition(h, { 0, 0});
                 
@@ -61,7 +61,7 @@ int main()
                 update_ideCommands();
                 break;
             case ideStatus::IDEconsole:
-                SetConsoleTitleA("inide - console");
+                SetConsoleTitleA("INIDE - console");
                 console();
                 break;
             

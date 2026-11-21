@@ -10,8 +10,9 @@
 #include <algorithm>
 #include <cctype>
 #include <fstream>
-#include "compiler.h"
+#include "runner.h"
 #include "write.h"
+#include "fileIO.h"
 
 
 void updateinIDE(){
@@ -21,7 +22,7 @@ void updateinIDE(){
         if(ch == 13){
             commands.push_back("");
             cursorPos.y++;
-            if(cursorPos.x > commands[cursorPos.y].size()) cursorPos.x = commands[cursorPos.y].size();
+            if(cursorPos.x > (int)commands[cursorPos.y].size()) cursorPos.x = commands[cursorPos.y].size();
             //line.clear();
         }else if(ch == 8){
             if(!commands[cursorPos.y].empty()){
@@ -55,7 +56,7 @@ void updateinIDE(){
                     if(cursorPos.y > 0){
                         
                         cursorPos.y--;
-                        if(cursorPos.x > commands[cursorPos.y].size()) cursorPos.x = commands[cursorPos.y].size();
+                        if(cursorPos.x > (int)commands[cursorPos.y].size()) cursorPos.x = commands[cursorPos.y].size();
                     
                     }
                     
@@ -63,19 +64,19 @@ void updateinIDE(){
                     
                     break;
                 case 80: //GIU
-                    if(cursorPos.y < commands.size()-1){
+                    if(cursorPos.y < (int)commands.size()-1){
                         cursorPos.y++;
-                        if(cursorPos.x > commands[cursorPos.y].size()) cursorPos.x = commands[cursorPos.y].size();
+                        if(cursorPos.x > (int)commands[cursorPos.y].size()) cursorPos.x = commands[cursorPos.y].size();
                     }
                     break;
                 case 75: //SINISTRA
                     if(cursorPos.x > 0) cursorPos.x--;
                     break;
                 case 77: //DESTRA
-                    if(cursorPos.x < commands[cursorPos.y].size()) cursorPos.x++;
+                    if(cursorPos.x < (int)commands[cursorPos.y].size()) cursorPos.x++;
                     break;
                 case 83:
-                    if(cursorPos.x < commands[cursorPos.y].size()){
+                    if(cursorPos.x < (int)commands[cursorPos.y].size()){
                         commands[cursorPos.y].erase(cursorPos.x, 1);
                         writeLine();
                     }
@@ -125,7 +126,9 @@ void update_ideCommands(){
         if(command == ":s"){
             
             save();
+            _getch();
             system("cls");
+            
             
         }else if(command == ":q"){
             exit(0);
@@ -135,7 +138,7 @@ void update_ideCommands(){
             writeIDE();
             
         }else if(command == ":c"){
-            std::cout << "\nnome file output: ";
+            std::cout << "\noutput file name: ";
             
                 
             
@@ -149,7 +152,7 @@ void update_ideCommands(){
             system("cls");
         }else if(command == ":cr"){
             
-            std::cout << "\nnome file output: ";
+            std::cout << "\noutput file name: ";
             std::cin >> outputName;
             
             system("cls");
@@ -183,7 +186,7 @@ void update_ideCommands(){
             system("cls");
             
         }else if(command == ":r"){
-            std::cout << "\nnome file: ";
+            std::cout << "\nfile name: ";
             std::string n;
             std::cin >> n;
             
@@ -205,7 +208,7 @@ void update_ideCommands(){
             
             
         }else if(command == ":cf"){
-            std::cout << "\nnome file(estensione inclusa): ";
+            std::cout << "\nfile name (including extension): ";
             std::string n;
             std::cin >> n;
             std::ofstream newfile(n);
@@ -213,7 +216,7 @@ void update_ideCommands(){
             system("cls");
             
         }else if(command == ":of"){
-            std::cout << "\nnome file(estensione inclusa): ";
+            std::cout << "\nfile name (including extension): ";
             std::cin >> fileName;
             std::ifstream file(fileName);
             
@@ -240,14 +243,26 @@ void update_ideCommands(){
             writeIDE();
             
             _getch();
-            system("cls");
             
-        }else if(command == ":sf"){
-            std::cout << "\nnome estensione: ";
+            
+        }else if(command == ":sfe"){
+            std::cout << "\nextension to search: ";
             std::string e;
             std::cin >> e;
             
             std::string c = "dir /b *." + e;
+            
+            system(c.c_str());
+            
+            _getch();
+            system("cls");
+            
+        }else if(command == ":sfn"){
+            std::cout << "\nname to search: ";
+            std::string n;
+            std::cin >> n;
+            
+            std::string c = "dir /b " + n + ".*";
             
             system(c.c_str());
             
@@ -272,7 +287,9 @@ void update_ideCommands(){
             std::cout << "\n:cr -> COMPILE AND RUN";
             std::cout << "\n:ac -> AUTO COMPILE";
             std::cout << "\n:acr -> AUTO COMPILE AND RUN";
-            std::cout << "\n:sf -> SEARCH FILE";
+            std::cout << "\n:goc -> GO IN CONSOLE";
+            std::cout << "\n:sfe -> SEARCH FILE BY EXTENSION";
+            std::cout << "\n:sfn -> SEARCH FILE BY NAME";
             std::cout << "\n:cf -> CREATE FILE";
             std::cout << "\n:of -> OPEN FILE";
             
@@ -282,7 +299,8 @@ void update_ideCommands(){
         }else{
             
             //draw_ideCommands = "Comando non conosciuto. Digita ':hlp' per aiuto.";
-            std::cout << "\nComando non conosciuto.\n" << "Digita ':hlp' per aiuto.";
+            std::cout << "\n\033[31m\nUnknown command.\033[0m\n";
+            std::cout << "Type ':hlp' for help.";
             _getch();
             system("cls");
         }

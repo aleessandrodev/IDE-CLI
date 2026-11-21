@@ -27,3 +27,17 @@ std::string obtainExtansion(std::string fileName){
     return extension;
 
 }
+
+std::string removeExtension(std::string fileName){
+    
+    size_t pos = fileName.find('.');
+        
+    if(pos != std::string::npos){
+        fileName.erase(pos);
+        return fileName;
+    }else{
+        return "none";
+    }
+    
+    
+}

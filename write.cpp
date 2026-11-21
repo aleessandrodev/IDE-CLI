@@ -14,13 +14,13 @@ void writeIDE(){
     
     system("cls");
     
-    int maxSize = std::log10(commands.size())+1;
+    int maxSize = std::log10(commands.size()+1)+1;
     
     for(int i = 0; i < maxSize; i++){
         std::cout << " ";
     }
     
-    std::cout << " "<< fileName << " | Premi ESC per funzioni " << "\n";
+    std::cout << " "<< fileName << " | Press ESC for functions " << "\n";
     
     for(int i = 0; i < maxSize; i++){
         std::cout << " ";
@@ -52,7 +52,18 @@ void writeIDE(){
 void writeLine(){
     std::cout << "\033[2K\r";
     int maxSize = std::log10(commands.size()+1)+1;
+    static int oldSize = 1;
     //int maxSize = std::log10(commands.size())+1;
+    
+    if(maxSize != oldSize){
+        oldSize = maxSize;
+        writeIDE();
+        
+        int up = commands.size() - cursorPos.y;
+        std::cout << "\033[" << up << "A\r\033[2K";
+    }
+        
+    
     
     std::cout << cursorPos.y+1;
     
@@ -65,25 +76,11 @@ void writeLine(){
     
     std::cout << commands[cursorPos.y];
     
-    /*for(int i = 0; i < commands[cursorPos.y].size(); i++){
-        
-        std::cout << i+1;
-        
-        for(int j = 0; j < maxSize - (std::log10(i+1)+1); j++){
-            std::cout << " ";
-        }
-        std::cout << "│ ";
-        
-        
-        
-        if(cursorPos.x != i){
-            std::cout << commands[cursorPos.y][i];
-        }
-        else{
-            std::cout << "█"; 
-        }
-    }*/
+    
+    
 }
+
+
 
 void drawCommands(){
     if(!draw_ideCommands.empty()){
