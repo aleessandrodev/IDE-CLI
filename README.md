@@ -41,15 +41,12 @@
 
 ---
 
-## ✨ Features
+## ✨ Fixies in v0.0.04b
 
-- ✏️ Terminal text editor inspired by VIM
-- ⚙️ **Compile** C++ files straight from the editor (manual or automatic)
-- ▶️ **Run** files in several languages (py, html, etc.)
-- 🖨️ **Built-in console**: a real console, with `mkdir`, `cd`, `del`, etc.
-- 📂 Create, search and open files from within the IDE
-- 🌐 Recognizes multiple languages by file extension
-
+  - Fixed a compile error with `:ac` and `:acr` in C++ files.
+  - Fixed an error when running other file types.
+  - Fixed line number alignment in the IDE.
+  - Improved project structure by splitting `compiler.cpp` into `runner.cpp` and `fileIO.cpp`.
 ---
 
 ## 📑 The three pages
@@ -80,7 +77,8 @@ Commands are typed from the **Functions** page.
 | `:cr`  | Compile and run (C++ only) |
 | `:ac`  | Auto compile (C++ only) |
 | `:acr` | Auto compile and run (C++ only) |
-| `:sf`  | Search for a file |
+| `:sfe`  | Search for a file from extension| **(new)**
+| `:sfn`  | Search for a file from name| **(new)**
 | `:cf`  | Create a file |
 | `:of`  | Open a file |
 
@@ -118,7 +116,8 @@ INIDE/
 ├── read.h/.cpp       # File reading
 ├── write.h/.cpp      # File writing
 ├── language.h/.cpp   # Language recognition
-└── compiler.h/.cpp   # Compilation and execution
+├── runner.h/.cpp   # Compilation and execution
+└── fileIO.h/.cpp   # Input/Output File (save function)
 ```
 
 ---
