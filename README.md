@@ -45,6 +45,7 @@
 
 - Added syntax highlighting using [SyntaxHighlighting-Cplusplus-Library](https://github.com/aleessandrodev/SyntaxHighlighting-Cplusplus-Library)
 - Improved the line break system: pressing `ENTER` in the middle of a line now splits it into two lines
+- The file-opening function has been moved to `fileIO.cpp`
 
 ---
 
@@ -114,6 +115,7 @@ INIDE/
 ├── write.h/.cpp      # File writing
 ├── language.h/.cpp   # Language recognition
 ├── runner.h/.cpp     # Compilation and execution
+└── fileIO.h/.cpp     # Input/Output files
 └── SyntaxHighlighting.h   
 ```
 
