@@ -8,6 +8,7 @@
 #include "codeLine.h"
 #include "read.h"
 #include "global.h"
+#include "SyntaxHighlighting.h"
 
 
 void writeIDE(){
@@ -30,16 +31,16 @@ void writeIDE(){
     std::cout << " ┌──────────────────────────────────" << "\n";
     
     
-    for(int i = 0; i < commands.size(); i++){
+    for(size_t i = 0; i < commands.size(); i++){
     
         std::cout << i+1;
     
-        for(int j = 0; j < maxSize - (std::log10(i+1)+1); j++){
+        for(size_t j = 0; j < maxSize - (std::log10(i+1)+1); j++){
             std::cout << " ";
         }
         std::cout << " │ ";
         
-        std::cout << commands[i] << "\n";
+        std::cout << highlightLine(commands[i]) << "\n";
         
     }
     
@@ -74,7 +75,7 @@ void writeLine(){
     
     std::cout << " │ ";
     
-    std::cout << commands[cursorPos.y];
+    std::cout << highlightLine(commands[cursorPos.y]);
     
     
     

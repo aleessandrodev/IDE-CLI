@@ -9,17 +9,23 @@
 #include "codeLine.h"
 #include "global.h"
 #include "console.h"
-
+#include "fileIO.h"
+#include "SyntaxHighlighting.h"
 
 ideStatus status = IDEcommands;
 
-
-
-int main()
+int main(int argc, char* argv[])
 {
     
     SetConsoleOutputCP(CP_UTF8);
-	
+	system("cls");
+    
+    initColors();
+    
+    if(argc >= 2){
+        openFile(argv[1]);
+        
+    }
     
     bool edit = true;
     
@@ -64,8 +70,7 @@ int main()
                 SetConsoleTitleA("INIDE - console");
                 console();
                 break;
-            
-            
+
         }
         
         
@@ -74,12 +79,7 @@ int main()
         //std::cout << "Size: " << commands[cursorPos.y].size() << "\n";
         //std::cout << "Pos Y: " << cursorPos.y << "\n";
         //std::cout << "Pos X: " << cursorPos.x << "\n";
-        
-        
-        
-        
-        
-        
+
         //y = command.size();
         
     }

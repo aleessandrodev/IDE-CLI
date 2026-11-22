@@ -20,20 +20,31 @@ void updateinIDE(){
         int ch = _getch();
     
         if(ch == 13){
-            commands.push_back("");
+            
+            std::string line = commands[cursorPos.y].substr(cursorPos.x);
+            commands[cursorPos.y].erase(cursorPos.x);
+
+            commands.insert(commands.begin() + cursorPos.y + 1, line);
+
             cursorPos.y++;
-            if(cursorPos.x > (int)commands[cursorPos.y].size()) cursorPos.x = commands[cursorPos.y].size();
-            //line.clear();
+            cursorPos.x = 0;
+
+            writeIDE();
+
+            int up = commands.size() - cursorPos.y;
+            std::cout << "\033[" << up << "A";
+
+            writeLine();
         }else if(ch == 8){
-            if(!commands[cursorPos.y].empty()){
-                if(cursorPos.x > 0){
-                    commands[cursorPos.y].erase(cursorPos.x-1, 1);
-                    
-                    //std::cout << "\b \b";
-                    if(cursorPos.x > 0) cursorPos.x--;
-                    writeLine();
-                }
+            
+            if(cursorPos.x > 0){
+                commands[cursorPos.y].erase(cursorPos.x-1, 1);
+                
+                //std::cout << "\b \b";
+                if(cursorPos.x > 0) cursorPos.x--;
+                writeLine();
             }
+            
         }else if(ch == 9){
             for(int i = 0; i < 4; i++){
                 //commands[cursorPos.y] += "";
@@ -59,9 +70,7 @@ void updateinIDE(){
                         if(cursorPos.x > (int)commands[cursorPos.y].size()) cursorPos.x = commands[cursorPos.y].size();
                     
                     }
-                    
-                    
-                    
+
                     break;
                 case 80: //GIU
                     if(cursorPos.y < (int)commands.size()-1){
@@ -218,25 +227,9 @@ void update_ideCommands(){
         }else if(command == ":of"){
             std::cout << "\nfile name (including extension): ";
             std::cin >> fileName;
-            std::ifstream file(fileName);
-            
-            if(!file.is_open()) return;
-            
-            commands.clear();
             
             
-            cursorPos.y = 0;
-            cursorPos.x = 0;
-            
-            
-            
-            
-            std::string riga = "";
-            while(std::getline(file, riga)){
-                commands.push_back(riga);
-            }
-            
-            if(commands.empty()) commands.push_back("");
+            openFile(fileName);
             
             status = ideStatus::inIDE;
             
