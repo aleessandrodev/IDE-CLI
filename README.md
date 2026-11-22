@@ -5,7 +5,7 @@
 **A VIM-inspired code editor and IDE that lives entirely in your terminal. Windows only.**
 
 ![Language](https://img.shields.io/badge/language-C%2B%2B-00599C?logo=c%2B%2B&logoColor=white)
-![Version](https://img.shields.io/badge/version-v0.0.4b-blue)
+![Version](https://img.shields.io/badge/version-v0.0.5a-blue)
 ![Platform](https://img.shields.io/badge/platform-Windows-0078D6?logo=windows&logoColor=white)
 ![Status](https://img.shields.io/badge/status-in%20development-orange)
 ![License](https://img.shields.io/badge/license-MIT-green)
@@ -37,16 +37,15 @@
 
 **INIDE** is a command-line IDE written in **C++**. It runs entirely in the terminal and has a **VIM**-inspired editor, so you can write, compile and run code without ever leaving the program.
 
-> ⚠️ The project is under active development (`v0.0.4b`): some features may change.
+> ⚠️ The project is under active development (`v0.0.5a`): some features may change.
 
 ---
 
-## ✨ Fixies in v0.0.4b
+## ✨ What's new in v0.0.5a
 
-  - Fixed a compile error with `:ac` and `:acr` in C++ files.
-  - Fixed an error when running other file types.
-  - Fixed line number alignment in the IDE.
-  - Improved project structure by splitting `compiler.cpp` into `runner.cpp` and `fileIO.cpp`.
+- Added syntax highlighting using [SyntaxHighlighting-Cplusplus-Library](https://github.com/aleessandrodev/SyntaxHighlighting-Cplusplus-Library)
+- Improved the line break system: pressing `ENTER` in the middle of a line now splits it into two lines
+
 ---
 
 ## 📑 The three pages
@@ -114,8 +113,8 @@ INIDE/
 ├── read.h/.cpp       # File reading
 ├── write.h/.cpp      # File writing
 ├── language.h/.cpp   # Language recognition
-├── runner.h/.cpp   # Compilation and execution
-└── fileIO.h/.cpp   # Input/Output File (save function)
+├── runner.h/.cpp     # Compilation and execution
+└── SyntaxHighlighting.h   
 ```
 
 ---
@@ -146,7 +145,7 @@ g++ *.cpp -o INIDE.exe
 - [x] VIM-inspired editor
 - [x] Compile and run from the editor
 - [x] Built-in console
-- [ ] Syntax highlighting
+- [x] Syntax highlighting
 - [ ] Undo / Redo
 - [ ] Linux and macOS support
 
