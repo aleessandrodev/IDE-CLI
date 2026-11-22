@@ -76,8 +76,8 @@ I comandi si digitano dalla pagina **Funzioni**.
 | `:cr`  | Compila ed esegui (solo C++) |
 | `:ac`  | Compilazione automatica (solo C++) |
 | `:acr` | Compilazione automatica ed esecuzione (solo C++) |
-| `:sfe` | Cerca un file dall'estensione **(nuovo)** |
-| `:sfn` | Cerca un file dal nome **(nuovo)** |
+| `:sfe` | Cerca un file dall'estensione |
+| `:sfn` | Cerca un file dal nome |
 | `:cf`  | Crea un file |
 | `:of`  | Apri un file |
 
@@ -115,7 +115,7 @@ INIDE/
 ├── write.h/.cpp      # Scrittura dei file
 ├── language.h/.cpp   # Riconoscimento dei linguaggi
 ├── runner.h/.cpp     # Compilazione ed esecuzione
-├── fileIO.h/.cpp     # Input/Output dei file (funzione di salvataggio)
+├── fileIO.h/.cpp     # Input/Output dei file
 └── SyntaxHighlighting.h
 ```
 
