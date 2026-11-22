@@ -5,7 +5,7 @@
 **Un editor di codice e IDE da terminale, ispirato a VIM, per Windows.**
 
 ![Language](https://img.shields.io/badge/language-C%2B%2B-00599C?logo=c%2B%2B&logoColor=white)
-![Version](https://img.shields.io/badge/version-v0.0.4b-blue)
+![Version](https://img.shields.io/badge/version-v0.0.5a-blue)
 ![Platform](https://img.shields.io/badge/platform-Windows-0078D6?logo=windows&logoColor=white)
 ![Status](https://img.shields.io/badge/status-in%20sviluppo-orange)
 ![License](https://img.shields.io/badge/license-MIT-green)
@@ -37,16 +37,15 @@
 
 **INIDE** è un IDE a riga di comando scritto in **C++**. Funziona interamente nel terminale, ha un editor ispirato a **VIM** e permette di scrivere, compilare ed eseguire codice senza uscire dal programma.
 
-> ⚠️ Il progetto è in sviluppo attivo (`v0.0.4b`): alcune funzionalità possono cambiare.
+> ⚠️ Il progetto è in sviluppo attivo (`v0.0.5a`): alcune funzionalità possono cambiare.
 
 ---
 
-## ✨ Correzioni nella v0.0.4b
+## ✨ Cosa c'è di nuovo nella v0.0.5a
 
-  - Corretto un errore di compilazione con `:ac` e `:acr` nei file C++.
-  - Corretto un errore durante l'esecuzione di altri tipi di file.
-  - Corretto l'allineamento dei numeri di riga nell'IDE.
-  - Migliorata la struttura del progetto dividendo `compiler.cpp` in `runner.cpp` e `fileIO.cpp`.
+  - Aggiunta sottolineatura della sintassi usando [SyntaxHighlighting-Cplusplus-Library](https://github.com/aleessandrodev/SyntaxHighlighting-Cplusplus-Library)
+  - Migliorato il sistema per andare a capo in IDE: premendo `ENTER` nel mezzo di una linea di codice ora si dividerà in due linee.
+
 ---
 
 ## 📑 Le tre pagine
@@ -115,7 +114,8 @@ INIDE/
 ├── write.h/.cpp      # Scrittura dei file
 ├── language.h/.cpp   # Riconoscimento dei linguaggi
 ├── runner.h/.cpp     # Compilazione ed esecuzione
-└── fileIO.h/.cpp     # Input/Output dei file (funzione di salvataggio)
+├── fileIO.h/.cpp     # Input/Output dei file (funzione di salvataggio)
+└── SyntaxHighlighting.h
 ```
 
 ---
