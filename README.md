@@ -76,8 +76,8 @@ Commands are typed from the **Functions** page.
 | `:cr`  | Compile and run (C++ only) |
 | `:ac`  | Auto compile (C++ only) |
 | `:acr` | Auto compile and run (C++ only) |
-| `:sfe`  | Search for a file from extension **(new)**|
-| `:sfn`  | Search for a file from name **(new)**|
+| `:sfe`  | Search for a file from extension |
+| `:sfn`  | Search for a file from name |
 | `:cf`  | Create a file |
 | `:of`  | Open a file |
 
