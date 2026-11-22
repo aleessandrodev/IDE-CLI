@@ -45,6 +45,7 @@
 
   - Aggiunta sottolineatura della sintassi usando [SyntaxHighlighting-Cplusplus-Library](https://github.com/aleessandrodev/SyntaxHighlighting-Cplusplus-Library)
   - Migliorato il sistema per andare a capo in IDE: premendo `ENTER` nel mezzo di una linea di codice ora si dividerà in due linee.
+  - La funzione per l'apertura di un file è stata spostata in `fileIO.cpp`
 
 ---
 
