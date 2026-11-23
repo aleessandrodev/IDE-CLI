@@ -51,7 +51,7 @@ inline void initColors(){
 
     add({"1","2","3","4","5","6","7","8","9","0"}, Color::BrightYellow);
 
-    add({"for", "while", "do", "if", "else", "switch", "case", "default",
+    add({"for", "while", "do", "if", "else", "elif", "elseif","switch", "case", "default",
          "break", "continue", "return", "goto", "try", "catch", "throw"}, Color::Purple);
 
     add({"int", "float", "char", "bool", "void", "double", "auto", "size_t",

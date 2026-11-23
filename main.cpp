@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <conio.h>
 #include <string>
 #include <windows.h>
 #include "read.h"
@@ -53,7 +52,7 @@ int main(int argc, char* argv[])
             
                 SetConsoleTitleA(("INIDE - " + fileName).c_str());
             
-                SetConsoleCursorPosition(h, { (SHORT)(cursorPos.x + gutter), (SHORT)(cursorPos.y + 2) });
+                SetConsoleCursorPosition(h, { (SHORT)(cursorPos.x + gutter), (SHORT)(cursorPos.y - topLine + 2) });
                 //writeIDE();
                 updateinIDE();
                 break;
@@ -81,6 +80,13 @@ int main(int argc, char* argv[])
         //std::cout << "Pos X: " << cursorPos.x << "\n";
 
         //y = command.size();
+        
+        
+        std::cout << "\0337";
+        std::cout << "\033[" << getConsoleRows()+1 << ";1H";
+        std::cout << "\033[2K\033[7m\033[0m" << "col: " << cursorPos.x << " | rig: " << cursorPos.y << " | " << commands.size();
+        std::cout << "\0338";
+        std::cout << std::flush;
         
     }
     

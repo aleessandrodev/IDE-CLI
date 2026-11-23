@@ -5,6 +5,7 @@
 #include <cmath>
 #include <windows.h>
 #include "cursor.h"
+#include "console.h"
 #include "codeLine.h"
 #include "read.h"
 #include "global.h"
@@ -29,10 +30,11 @@ void writeIDE(){
     
     
     std::cout << " ┌──────────────────────────────────" << "\n";
+
     
     
-    for(size_t i = 0; i < commands.size(); i++){
-    
+    for(size_t i = topLine; i < getEnd(); i++){
+        
         std::cout << i+1;
     
         for(size_t j = 0; j < maxSize - (std::log10(i+1)+1); j++){
@@ -60,7 +62,7 @@ void writeLine(){
         oldSize = maxSize;
         writeIDE();
         
-        int up = commands.size() - cursorPos.y;
+        int up = getEnd() - cursorPos.y;
         std::cout << "\033[" << up << "A\r\033[2K";
     }
         

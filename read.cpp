@@ -28,10 +28,10 @@ void updateinIDE(){
 
             cursorPos.y++;
             cursorPos.x = 0;
-
+            updateScroll();
             writeIDE();
 
-            int up = commands.size() - cursorPos.y;
+            int up = getEnd() - cursorPos.y;
             std::cout << "\033[" << up << "A";
 
             writeLine();
@@ -42,7 +42,25 @@ void updateinIDE(){
                 
                 //std::cout << "\b \b";
                 if(cursorPos.x > 0) cursorPos.x--;
+                updateScroll();
                 writeLine();
+            }else{
+                if(cursorPos.y != 0){
+                    if(cursorPos.y < commands.size()){
+                        
+                        int posX = commands[cursorPos.y-1].size();
+                        
+                        commands[cursorPos.y-1] += commands[cursorPos.y];
+                        commands.erase(commands.begin() + cursorPos.y);
+                        
+                        cursorPos.y--;
+                        cursorPos.x = posX;
+                        updateScroll();
+                        writeIDE();
+                        
+                    }
+                    
+                }
             }
             
         }else if(ch == 9){
@@ -68,7 +86,7 @@ void updateinIDE(){
                         
                         cursorPos.y--;
                         if(cursorPos.x > (int)commands[cursorPos.y].size()) cursorPos.x = commands[cursorPos.y].size();
-                    
+                        if(updateScroll()) writeIDE();
                     }
 
                     break;
@@ -76,6 +94,7 @@ void updateinIDE(){
                     if(cursorPos.y < (int)commands.size()-1){
                         cursorPos.y++;
                         if(cursorPos.x > (int)commands[cursorPos.y].size()) cursorPos.x = commands[cursorPos.y].size();
+                        if(updateScroll()) writeIDE();
                     }
                     break;
                 case 75: //SINISTRA
@@ -210,7 +229,7 @@ void update_ideCommands(){
             
             
             system("cls");
-            run(outputName);
+            run(fileName);
             
             _getch();
             system("cls");

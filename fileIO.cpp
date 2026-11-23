@@ -45,6 +45,7 @@ void openFile(std::string nameFile){
    
     cursorPos.y = 0;
     cursorPos.x = 0;
+    topLine = 0;
     
     std::string riga = "";
     while(std::getline(file, riga)){

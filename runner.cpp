@@ -50,7 +50,11 @@ void run(std::string o){
         oCommand = "python " + o;
     }else if(extension == "java"){
         oCommand = "javac " + o + "&& java " + removeExtension(o);
+    }else{
+        oCommand = removeExtension(o);
     }
+    
+    
     system(oCommand.c_str());
 }
 
