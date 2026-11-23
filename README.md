@@ -5,7 +5,7 @@
 **A VIM-inspired code editor and IDE that lives entirely in your terminal. Windows only.**
 
 ![Language](https://img.shields.io/badge/language-C%2B%2B-00599C?logo=c%2B%2B&logoColor=white)
-![Version](https://img.shields.io/badge/version-v0.0.5a-blue)
+![Version](https://img.shields.io/badge/version-v0.0.6a-blue)
 ![Platform](https://img.shields.io/badge/platform-Windows-0078D6?logo=windows&logoColor=white)
 ![Status](https://img.shields.io/badge/status-in%20development-orange)
 ![License](https://img.shields.io/badge/license-MIT-green)
@@ -38,11 +38,11 @@
 
 **INIDE** is a command-line IDE written in **C++**. It runs entirely in the terminal and has a **VIM**-inspired editor, so you can write, compile and run code without ever leaving the program.
 
-> ⚠️ The project is under active development (`v0.0.5a`): some features may change.
+> ⚠️ The project is under active development (`v0.0.6a`): some features may change.
 
 ---
 
-## ✨ What's new in v0.0.5a
+## ✨ What's new in v0.0.6a
 
 - Added syntax highlighting using [SyntaxHighlighting-Cplusplus-Library](https://github.com/aleessandrodev/SyntaxHighlighting-Cplusplus-Library)
 - Improved the line break system: pressing `ENTER` in the middle of a line now splits it into two lines
