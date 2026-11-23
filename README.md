@@ -13,6 +13,7 @@
 🇬🇧 English · 🇮🇹 [Italiano](README.it.md)
 
 </div>
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/3a784cb5-6ca5-4f5c-b18e-2892e0bf8229" />
 
 ---
 
