@@ -1,11 +1,9 @@
 <div align="center">
 
-# 🖥️ INIDE
-
-**Un editor di codice e IDE da terminale, ispirato a VIM, per Windows.**
+# INIDE
 
 ![Language](https://img.shields.io/badge/language-C%2B%2B-00599C?logo=c%2B%2B&logoColor=white)
-![Version](https://img.shields.io/badge/version-v0.0.5a-blue)
+![Version](https://img.shields.io/badge/version-v0.0.6a-blue)
 ![Platform](https://img.shields.io/badge/platform-Windows-0078D6?logo=windows&logoColor=white)
 ![Status](https://img.shields.io/badge/status-in%20sviluppo-orange)
 ![License](https://img.shields.io/badge/license-MIT-green)
@@ -38,15 +36,15 @@
 
 **INIDE** è un IDE a riga di comando scritto in **C++**. Funziona interamente nel terminale, ha un editor ispirato a **VIM** e permette di scrivere, compilare ed eseguire codice senza uscire dal programma.
 
-> ⚠️ Il progetto è in sviluppo attivo (`v0.0.5a`): alcune funzionalità possono cambiare.
+> ⚠️ Il progetto è in sviluppo attivo (`v0.0.6a`): alcune funzionalità possono cambiare.
 
 ---
 
-## ✨ Cosa c'è di nuovo nella v0.0.5a
+## ✨ Cosa c'è di nuovo nella v0.0.6a
 
-  - Aggiunta sottolineatura della sintassi usando [SyntaxHighlighting-Cplusplus-Library](https://github.com/aleessandrodev/SyntaxHighlighting-Cplusplus-Library)
-  - Migliorato il sistema per andare a capo in IDE: premendo `ENTER` nel mezzo di una linea di codice ora si dividerà in due linee.
-  - La funzione per l'apertura di un file è stata spostata in `fileIO.cpp`
+  - Risolto errore riguardante `:r` che non permetteva di eseguire file eseguibili come `.exe` o `.py`...ecc
+  - Aggiunto il backspace a inizio riga
+  - Risolto errore che non permetteva la scrittura di codice oltre il numero di righe del terminale
 
 ---
 
@@ -148,6 +146,8 @@ g++ *.cpp -o INIDE.exe
 - [x] Console integrata
 - [ ] Syntax highlighting
 - [ ] Undo / Redo
+- [ ] Copia / Incolla
+- [ ] Cursore multiplo
 - [ ] Supporto Linux e macOS
 
 ---
