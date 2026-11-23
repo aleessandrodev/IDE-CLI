@@ -1,3 +1,5 @@
+<div align="center">
+
 # INIDE
 
 [![Language](https://img.shields.io/badge/language-C%2B%2B-00599C?logo=c%2B%2B&logoColor=white)](#)
@@ -7,7 +9,7 @@
 [![License](https://img.shields.io/badge/license-MIT-green)](#)
 
 🇬🇧 English · 🇮🇹 [Italiano](https://github.com/aleessandrodev/INIDE-terminal_based_IDE/blob/v0.0.6a/README.it.md)
-
+</div>
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/aaf73183-f740-4e63-af15-edbdedd55363" />
 
 ---
@@ -105,4 +107,70 @@ INIDE/
 ├── codeLine.h/.cpp   # Code line management
 ├── cursor.h/.cpp     # Cursor management
 ├── console.h/.cpp    # Terminal input/output
-├── read.h/.cpp       #
+├── read.h/.cpp       # File reading
+├── write.h/.cpp      # File writing
+├── language.h/.cpp   # Language recognition
+├── runner.h/.cpp     # Compilation and execution
+├── fileIO.h/.cpp     # File input/output
+└── SyntaxHighlighting.h
+```
+
+---
+
+## 📋 Requirements
+
+- **Windows**
+- **g++ (MinGW)** to compile the sources
+- To use `:c` / `:cr`, a C++ compiler reachable from the terminal is required
+
+---
+
+## 🚀 Build
+
+```
+git clone https://github.com/aleessandrodev/INIDE.git
+cd INIDE
+g++ *.cpp -o INIDE.exe
+```
+
+---
+
+## 🛣️ Roadmap
+
+- [x] VIM-inspired editor
+- [x] Compile and run from the editor
+- [x] Built-in console
+- [ ] Syntax highlighting
+- [ ] Undo / Redo
+- [ ] Copy / Paste
+- [ ] Multiple cursors
+- [ ] Linux and macOS support
+
+---
+
+## 🤝 Contributing
+
+1. **Fork** the project
+2. Create a branch (`git checkout -b feature/feature-name`)
+3. Commit your changes (`git commit -m "Add feature-name"`)
+4. Push to the branch (`git push origin feature/feature-name`)
+5. Open a **Pull Request**
+
+For bugs or suggestions, open an [issue](https://github.com/aleessandrodev/INIDE/issues).
+
+---
+
+## 📄 License
+
+Distributed under the **MIT** license. See the `LICENSE` file.
+
+---
+
+## 👤 Author
+
+**Alessandro** — [@aleessandrodev](https://github.com/aleessandrodev)
+
+---
+<div align="center">
+If you like the project, leave a ⭐
+</div>
