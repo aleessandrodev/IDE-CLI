@@ -1,8 +1,6 @@
 <div align="center">
 
-# 🖥️ INIDE
-
-**A VIM-inspired code editor and IDE that lives entirely in your terminal. Windows only.**
+# INIDE
 
 ![Language](https://img.shields.io/badge/language-C%2B%2B-00599C?logo=c%2B%2B&logoColor=white)
 ![Version](https://img.shields.io/badge/version-v0.0.5a-blue)
