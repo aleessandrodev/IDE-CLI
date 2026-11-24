@@ -140,7 +140,7 @@ g++ *.cpp -o INIDE.exe
 - [x] VIM-inspired editor
 - [x] Compile and run from the editor
 - [x] Built-in console
-- [ ] Syntax highlighting
+- [x] Syntax highlighting
 - [ ] Undo / Redo
 - [ ] Copy / Paste
 - [ ] Multiple cursors
