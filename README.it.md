@@ -146,7 +146,7 @@ g++ *.cpp -o INIDE.exe
 - [x] Editor ispirato a VIM
 - [x] Compilazione ed esecuzione da editor
 - [x] Console integrata
-- [ ] Syntax highlighting
+- [x] Syntax highlighting
 - [ ] Undo / Redo
 - [ ] Supporto Linux e macOS
 
